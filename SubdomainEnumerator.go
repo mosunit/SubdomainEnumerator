@@ -54,7 +54,6 @@ func main() {
 }
 
 //Perform wildcard check
-//dig @1.1.1.1 A,CNAME {test321123,testingforwildcard,plsdontgimmearesult}.<domain> +short | wc -l
 func wildcard(d string) {
 
 	logvar.Println("Checking wildcard configuration for:", d)
@@ -99,7 +98,6 @@ func amass(d string) {
 	return
 }
 
-//curl -s "https://crt.sh/?q=%.<domain>&output=json" | jq '.[].name_value' | sed 's/\"//g' | sed 's/\*\.//g' | sort -u
 func crtsh(domain string) {
 	logvar.Println("Querying SSL certificates for subdomains for TLD:", domain)
 
