@@ -24,7 +24,10 @@ The script is written in Go; so it is possible to cross compile it easily for ot
 ## Getting Started | Tool Dependencies
 Clone the repository using `git clone`. Then, you need to run `./install.sh`, which will install the dependecies for the tool.
 
+**Note:** You need to be root to install the dependencies using `install.sh`
+
 ## Usage
+Ensure that the script is run from the same directory from which `install.sh` is run
 
 ```
 Usage: go run SubdomainENumerator.go -domain [domain_to_be_enumerated]
