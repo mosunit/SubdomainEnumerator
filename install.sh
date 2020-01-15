@@ -20,7 +20,8 @@ echo
 
 ##Install Golang
 echo "[*] Verifying Golang Installation"
-hash go 2>/dev/null || { echo "Golang not installed. Installing…"; cd "${DEST}"; wget https://dl.google.com/go/go1.13.5.linux-amd64.tar.gz; tar -C /usr/local -xzf go1.13.5.linux-amd64.tar.gz; echo "export PATH=\$PATH:/usr/local/go/bin" >> $HOME/.profile; echo "export PATH=\$PATH:/usr/local/go/bin" >> ~/.bashrc; source $HOME/.profile;}
+hash go 2>/dev/null || { echo "Golang not installed. Installing…"; cd "${DEST}"; wget https://dl.google.com/go/go1.13.5.linux-amd64.tar.gz; tar -C /usr/local -xzf go1.13.5.linux-amd64.tar.gz; echo "export PATH=\$PATH:/usr/local/go/bin" >> $HOME/.profile; echo "export PATH=\$PATH:/usr/local/go/bin" >> ~/.bashrc;}
+source $HOME/.profile
 echo
 
 ##Install Golang Packages
@@ -35,7 +36,6 @@ apt-get -y install amass
 
 ##Install MassDNS
 echo "[*] Installing MassDNS"
-cd "${DEST}"
 git clone https://github.com/blechschmidt/massdns.git
 cd massdns
 make
