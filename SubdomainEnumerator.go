@@ -78,7 +78,8 @@ func wildcard(d string) {
 }
 
 func amass(d string) {
-	logvar.Printf("Running Amass for subdomain enumeration for TLD: %s", d)
+	logvar.Printf("Running Amass for subdomain enumeration for TLD: %s \n", d)
+	logvar.Println("This might take a while")
 
 	file := "subdomainenum_temp/subdomains_temp.txt"
 
@@ -202,7 +203,7 @@ func dnsbrute(domain string) {
 
 	logvar.Printf("Running MassDNS to find online domains")
 
-	arg := "massdns -r subdomainenum_temp/massdns/lists/resolvers.txt -t A -o S -w subdomainenum_temp/subdomains_with_metadata.txt subdomainenum_temp/subdomains_temp.txt"
+	arg := "massdns -r resolver_verified.txt -t A -o S -w subdomainenum_temp/subdomains_with_metadata.txt subdomainenum_temp/subdomains_temp.txt"
 	massdnsCmd := fmt.Sprintf("%s", arg)
 
 	massdnsOut := exec.Command("bash", "-c", massdnsCmd)
