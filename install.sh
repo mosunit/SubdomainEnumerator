@@ -35,6 +35,7 @@ echo "[*] Installing Amass"
 apt-get -y install amass
 
 ##Install MassDNS
+cd "${DEST}"
 echo "[*] Installing MassDNS"
 git clone https://github.com/blechschmidt/massdns.git
 cd massdns
